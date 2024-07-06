@@ -1,7 +1,7 @@
 def pixel(sym, times):
     '''接受两个参数，打印什么符号、打印多少次'''
-    ans = sym * times
-    print(ans, end="")
+    for sym in range(times):
+        print(sym, end="")
 
 
 while True:
