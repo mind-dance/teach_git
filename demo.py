@@ -1,4 +1,8 @@
-n = int(input("height: "))
+while True:
+    n = int(input("height: "))
+    # 限制用户输入在正整数1到8之间，包括1和8
+    if 1 <= n <= 8:
+        break
 # 每行的操作
 for row in range(n):
     # 计算需要的井号和空格的个数
