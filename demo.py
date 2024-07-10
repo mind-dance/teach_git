@@ -25,4 +25,4 @@ for row in range(n):
     # 打印换行符
     print()
 
-print("我才是点点"）
+print("我不是点点"）
