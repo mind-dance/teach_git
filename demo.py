@@ -24,3 +24,6 @@ for row in range(n):
         print(".", end="")
     # 打印换行符
     print()
+
+
+print("我是点点！我要PR！"）
