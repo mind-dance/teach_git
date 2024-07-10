@@ -26,4 +26,4 @@ for row in range(n):
     print()
 
 
-print("我是点点！我要PR！"）
+print("我是点点！我要PR！654321"）
