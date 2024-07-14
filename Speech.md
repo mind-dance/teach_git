@@ -25,27 +25,213 @@
 历史
 
 # 基础
+1. 第一提交
 
-- 初始化仓库`init`
-- 查看目前状态`status`
-- 新建一个文件，进行mario0.py
-- 查看状态
-- `add`当前文件，但不提交
-- 修改为mario1.py，并查看状态
+    ```
+    init, status, add, commit
+    ```
 
-每次add添加的是目前的状态
+    
 
-- 第一次提交，-m随便写
+    - 初始化仓库`init`
 
-打开编辑器进行信息的编辑
+    - 查看目前状态`status`
 
-- `qmark`问号块作为函数，主体修改为mario2.py，添加并取消
-- 查看历史
-- `help`提交，查看-m参数
-- 提交
+    - 新建一个文件
+
+      ```python
+      # qmark
+      print("????")
+      ```
+
+      
+
+    - 查看状态
+
+    - `add`当前文件，但不提交
+
+      ```python
+      # qmark
+      for i in range(4):
+          print("?", end="")
+      print()
+      ```
+
+      查看状态
+
+    每次add添加的是目前的状态
+
+    - 第一次提交，msg随便写
+
+2. 查看历史
+
+    ```
+    log diff checkout help
+    ```
+
+    打开编辑器进行信息的编辑
+
+    ```python
+    # qmark
+    def qmark():
+        for i in range(4):
+            print("?", end="")
+        print()
+    
+        
+    # wall
+    for i in range(3):
+        print("#")
+    ```
+
+    - 查看历史
+    - `help`提交，查看-m参数
+    - 提交
+    - 对比前一个文件`diff`
+    - 切换到前一个文件`checkout`
+
+3. 撤销更改
+
+    ```
+    --amend restore checkout
+    ```
+
+- 上部分设置为`wall`函数
+
+  ```python
+  # wall
+  def wall():
+      for i in range(3):
+          print("#")
+  
+  
+  # block
+  for row in range(3):
+      for col in range(3):
+          print("#",end="")
+      print()
+  ```
+
+- 提交，随后切换版本
+
+4. 分支
+
+   创建分支
+
+   triangle函数。立即合并
+
+   ```python
+   # block
+   def block():
+       for row in range(3):
+           for col in range(3):
+               print("#",end="")
+           print()
+   
+   
+   n = int(input("height: "))
+   # 每行的操作
+   for row in range(n):
+       # 计算需要的井号和空格的个数
+       hashes = row + 1
+       dots = n - hashes
+       # 打印点
+       for dot in range(dots):
+           print(".", end="")
+       # 打印井号
+       for hashe in range(hashes):
+           print("#", end="")
+       # 打印换行符
+       print()
+   ```
+
+   
+
+   bugFix等待合并。
+
+5. 切换至github
+
+创建仓库，公开。
+
+本地文件推送到远程。
 
 
 
-- `wall`函数
-- 
+用github编辑器完成
 
+- issue，非法输入#2 branch合并 ；
+- PR:输出有误，`.`换space
+
+- issue，希望双门 #1 演示
+
+- issue，代码太辣鸡，要重构 #3
+
+```python
+# qmark
+def qmark():
+    for i in range(4):
+        print("?", end="")
+    print()
+
+
+# wall
+def wall():
+    for i in range(3):
+        print("#")
+
+
+# block
+def block():
+    for row in range(3):
+        for col in range(3):
+            print("#",end="")
+        print()
+
+
+# triangle
+def tag(n):
+    # 每行的操作
+    for row in range(n):
+        # 计算需要的井号和空格的个数
+        hashes = row + 1
+        dots = n - hashes
+        # 打印点
+        for dot in range(dots):
+            print(".", end="")
+        # 打印井号
+        for hashe in range(hashes):
+            print("#", end="")
+        # 打印换行符
+        print()
+
+
+# double triangle        
+def dtag(n):
+    # 每行的操作
+    for row in range(n):
+        # 计算需要的井号和空格的个数
+        hashes = row + 1
+        dots = n - hashes
+        # 打印点
+        for dot in range(dots):
+            print(".", end="")
+        # 打印井号
+        for hashe in range(hashes):
+            print("#", end="")
+        # 打印中间点
+        print("..", end="")
+        # 打印井号
+        for hashe in range(hashes):
+            print("#", end="")
+        # 打印点
+        for dot in range(dots):
+            print(".", end="")
+        # 打印换行符
+        print()
+
+
+n = int(input("height: "))
+dtag(n)
+```
+
+提交带上双开门#2
